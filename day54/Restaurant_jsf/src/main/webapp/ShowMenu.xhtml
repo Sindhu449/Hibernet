@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+    <h:form>
+            <center>
+                <h2><h:outputText value="Menu Details"/></h2>
+            </center>
+        <h:dataTable value="#{menuDAO.showMenu()}" var="menu" border="3">
+                <h:column>
+                    <f:facet name="header">Menu Id</f:facet>
+                    <h:outputText value="#{menu.menu_id}"/>
+                </h:column>
+                        <h:column>
+                    <f:facet name="header">Restaurant Id</f:facet>
+                    <h:outputText value="#{menu.rest_id}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Menu Item</f:facet>
+                    <h:outputText value="#{menu.menu_item}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Menu Price</f:facet>
+                    <h:outputText value="#{menu.menu_price}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Menu Type</f:facet>
+                    <h:outputText value="#{menu.menu_type}"/>
+                </h:column>
+        </h:dataTable>
+        <center>
+        <h:commandButton action = "AddMenu.xhtml?faces-redirect=true"
+             value="Add Menu" />
+       </center>
+        </h:form>
+
+</h:body>
+</html>

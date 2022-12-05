@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+<h1>Add Menu</h1>
+<h:form>
+Restaurant Name:
+<h:inputText id="rest_name" required="true" value="#{restaurant.rest_name}"
+				requiredMessage="Name is mandatory"></h:inputText>
+<br/><br/>
+Restaurant Id:
+<h:inputText value="#{menu.rest_id}"/><br/><br/>
+Menu Item :
+<h:inputText value="#{menu.menu_item}"/><br/><br/>
+Menu Price:
+<h:inputText value="#{menu.menu_price}"/><br/><br/>
+Menu Type:
+<h:inputText value="#{menu.menu_type}"/><br/><br/>
+<h:commandButton value="Save" action="#{menuDAO.AddMenu(menu)}"/>
+<h:link outcome="ShowMenu" value="View Restaurant Records"/>
+</h:form>
+</h:body>>
+
+
+</html>

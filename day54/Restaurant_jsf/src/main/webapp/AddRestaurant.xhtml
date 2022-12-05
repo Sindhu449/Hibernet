@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+       xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:body>
+<h1>Add Restaurant</h1>
+<h:form>
+Restaurant Name:
+<h:inputText value="#{restaurant.rest_name}"/><br/><br/>
+Restaurant City:
+<h:inputText value="#{restaurant.city}"/><br/><br/>
+Restaurant State:
+<h:inputText value="#{restaurant.state}"/><br/><br/>
+Restaurant Pincode:
+<h:inputText value="#{restaurant.pincode}"/><br/><br/>
+Restaurant Gmail:
+<h:inputText id="rest_email" value="#{restaurant.rest_email}" validator="#{RestaurantDAO.validateEmail}" /><br/><br/>
+Restaurant Mobile:
+<h:inputText value="#{restaurant.rest_mob_no}" validator="#{RestaurantDAO.validatePhnNo}" /><br/><br/>
+Restaurant userName:
+<h:inputText value="#{restaurant.rest_userName}"/><br/><br/>
+Restaurant Password:
+<h:inputText value="#{restaurant.rest_password}"  validator="#{RestaurantDAO.validatePassword}" /><br/><br/>
+<h:commandButton value="Save" action="#{RestaurantDAO.addRestaurant(restaurant)}"/>
+<h:link outcome="ShowRestaurant" value="View Restaurant Records"/>
+</h:form>
+</h:body>
+</html>

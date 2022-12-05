@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+<h:body>
+
+    <h:form>
+            <center>
+                <h2><h:outputText value="Restaurant Details"/></h2>
+            </center>
+        <h:dataTable value="#{RestaurantDAO.showRest()}" var="restaurant" border="3">
+                <h:column>
+                    <f:facet name="header">Restaurant Id</f:facet>
+                    <h:outputText value="#{restaurant.rest_id}"/>
+                </h:column>
+                        <h:column>
+                    <f:facet name="header">Restaurant Name</f:facet>
+                    <h:outputText value="#{restaurant.rest_name}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Restaurant City</f:facet>
+                    <h:outputText value="#{restaurant.city}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Restaurant State</f:facet>
+                    <h:outputText value="#{restaurant.state}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Restaurant Pincode</f:facet>
+                    <h:outputText value="#{restaurant.pincode}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Restaurant Email</f:facet>
+                    <h:outputText value="#{restaurant.rest_email}"/>
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">Restaurant Mobile</f:facet>
+                    <h:outputText value="#{restaurant.rest_mob_no}"/>
+                </h:column>
+                 <h:column>
+                    <f:facet name="header">Restaurant UserName</f:facet>
+                    <h:outputText value="#{restaurant.rest_userName}"/>
+                </h:column>
+                    <h:column>
+                    <f:facet name="header">Restaurant Password</f:facet>
+                    <h:outputText value="#{restaurant.rest_password}"/>
+                </h:column>
+        </h:dataTable>
+        <center>
+        <h:commandButton action = "AddRestaurant.xhtml?faces-redirect=true"
+        
+             value="Add Restaurant" />
+       </center>
+        </h:form>
+
+</h:body>
+</html>
